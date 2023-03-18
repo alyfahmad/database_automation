@@ -1,0 +1,5 @@
+1. Click on File and go to Settings
+2. Under Project Interpreter install the following
+    1. robotframework-databaselibrary
+    2. pymssql
+3.
