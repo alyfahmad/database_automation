@@ -39,4 +39,5 @@ Verify Added Data
     element should be visible   xpath://td[contains(text(),'${Address}')]
 
 Close Browser
+    sleep    3s
     close browser

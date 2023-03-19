@@ -50,6 +50,7 @@ Navigate to Clients
 Validate Data from UI
     ${row}=     set variable    2
     ${next_temp_variable}=  set variable    "test"
+    sleep    3s
     WHILE   ${next_temp_variable} != ${None}
         FOR    ${i}     IN RANGE    5
             ${temp}    Evaluate    ${i} + 1

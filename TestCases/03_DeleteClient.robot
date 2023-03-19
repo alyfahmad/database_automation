@@ -23,11 +23,8 @@ ${browser}     chrome
 ${id}
 
 *** Test Cases ***
-Open browser and maximize browser window
-    open browser    ${url}      ${browser}
-    maximize browser window
-
-Navigate to Clients
+Open Browse and Navigate to Clients
+    Open browser and maximize browser window
     click element   xpath://a[normalize-space()='Clients']
 
 Identify Client ID
@@ -41,11 +38,8 @@ Update client in database
     ${output}=  Execute Sql String      EXEC [dbo].[Delete_patient] @id=${id}
     should be equal as strings    ${output}     None
 
-Open browser and maximize browser window
-    open browser    ${url}      ${browser}
-    maximize browser window
-
-Navigate to Clients
+Open Browser again and Navigate to Clients
+    Open browser and maximize browser window
     click element   xpath://a[normalize-space()='Clients']
 
 Verify Added Data
@@ -55,4 +49,10 @@ Verify Added Data
     element should not be visible   xpath://td[contains(text(),'${Address}')]
 
 Close Browser
+    sleep    3s
     close browser
+
+*** Keywords ***
+Open browser and maximize browser window
+    open browser    ${url}      ${browser}
+    maximize browser window

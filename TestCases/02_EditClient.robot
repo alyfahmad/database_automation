@@ -28,11 +28,8 @@ ${browser}     chrome
 ${id}
 
 *** Test Cases ***
-Open browser and maximize browser window
-    open browser    ${url}      ${browser}
-    maximize browser window
-
-Navigate to Clients
+Open Browser and Navigate to Clients
+    Open browser and maximize browser window
     click element   xpath://a[normalize-space()='Clients']
 
 Identify Client ID
@@ -46,11 +43,8 @@ Update client in database
     ${output}=  Execute Sql String      EXEC [dbo].[Edit_patient] @id=${id}, @name = N'${Updated_Name}', @email = N'${Updated_Email}', @phone = N'${Updated_Phone}',@address = N'${Updated_Address}'
     should be equal as strings    ${output}     None
 
-Open browser and maximize browser window
-    open browser    ${url}      ${browser}
-    maximize browser window
-
-Navigate to Clients
+Open Browser Again and Navigate to Clients
+    Open browser and maximize browser window
     click element   xpath://a[normalize-space()='Clients']
 
 Verify Edited Data
@@ -60,4 +54,10 @@ Verify Edited Data
     element should be visible   xpath://td[contains(text(),'${Updated_Address}')]
 
 Close Browser
+    sleep    3s
     close browser
+
+*** Keywords ***
+Open browser and maximize browser window
+    open browser    ${url}      ${browser}
+    maximize browser window
