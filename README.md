@@ -40,6 +40,9 @@ Hello. This is a Database Automation Project using Robot Framework, ASP.NET Core
   </ul>
 </details>
 
+## Demo Video
+[demo](https://user-images.githubusercontent.com/61960249/226195981-59730611-60a6-45c9-ae19-513a6668e39c.mp4)
+
 ## Acknowledgements
 - Found a great youtube tutorial by SDET- QA Automation Techie: https://www.youtube.com/watch?v=GRwMCKdzJGM&ab_channel=SDET-QAAutomationTechie
 - Robot Framework Documentations: 
